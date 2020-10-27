@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+:root {
+  --primary: #f44336;
+  --primary-focus: #d32f2f;
+  --opacity-transparent: rgba(211, 47, 47, 0.1);
+  --focus: #64b5f6;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+input:required, textarea:required, select:required {
+  box-shadow: none;
+}
+
+/* 
+  BUTTON STYLE
+*/
+
+.button {
+  margin: 5px;
+  width: inherit;
+  font-size: 14px;
+  border-radius: 3px;
+  font-family: var(--body-font);
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10px;
+  transition: all .2s;
+}
+
+.button p {
+  padding-left: 10px;
+}
+
+.button:hover {
+  background-color: var(--primary-focus);
+}
+
+/* 
+  BUTTONOUTLINE STYLE
+*/
+
+.buttonOutline {
+  margin: 5px;
+  width: inherit;
+  font-size: 14px;
+  border-radius: 3px;
+  font-family: var(--body-font);
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10px;
+  transition: all .2s;
+}
+
+.buttonOutline p {
+  padding-left: 10px;
+}
+
+.buttonOutline:hover {
+  background-color: var(--opacity-transparent)
+}
+
+/* 
+INPUT STYLE
+*/
+
+.input {
+  margin: 5px;
+  width: 100%;
+  color: var(--text-color);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 10px;
+  font-family: var(--body-font);
+  transition: all .2s;
+}
+
+.input svg {
+  margin-right: 5px;
+}
+
+.input input {
+  width: 100%;
+  background-color: red;
+  border: none;
+  font-size: 14px;
+  background-color: transparent;
+  color: var(--text-color);
+  height: 20px;
+}
+
+.input:focus-within {
+  color: var(--focus);
+  border: 1px solid var(--focus);
+}
+
+/* 
+TEXTAREA
+*/
+
+.textarea {
+  margin: 5px;
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.textarea textarea {
+  font-family: var(--body-font);
+  background-color: transparent;
+  color: var(--text-color);
+  border: none;
+  font-size: 14px;
+  resize: none;
+  height: 100%;
+  width: 100%;
+}
+
+/* 
+AUTO COMPLETE
+*/
+
+.containerAutoComplete {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.containerAutoComplete div:first-child {
+  position: relative;
+  width: 100%;
+}
+
+.containerAutoComplete .input {
+  margin: 0px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.containerAutoComplete:focus-within .autoComplete {
+  color: var(--text-color);
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+.containerAutoComplete:focus-within svg {
+  color: var(--focus);
+}
+
+.containerAutoComplete:focus-within .containerChildren {
+  color: var(--text-color);
+  border: 1px solid var(--focus);
+  border-top: none;
+}
+
+.containerAutoComplete:focus-within .input {
+  border-bottom: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.add {
+  display: none;
+}
+
+.containerAutoComplete:focus-within .add {
+  display: block;
+}
+
+.containerChildren {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.autoComplete {
+  font-family: var(--body-font);
+  width: 100%;
+  padding: 5px;
+  z-index: 3;
+  background-color: var(--theme-bg-color-1);
+  transition: all .2s;
+}
+
+.autoComplete p:nth-child(1) {
+  font-size: 16px;
+}
+
+.autoComplete p:nth-child(2) {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.autoComplete:hover {
+  background-color: var(--theme-bg-color-2);
+}
+
+.autoComplete:hover p {
+  /* color: var(--focus); */
+}
+
+.selectAutoComplete {
+  background-color: var(--theme-bg-color-2);
+  width: 100%;
+  padding: 5px;
+  transition: all .1s;
+}
+
+.disabledAutoComplete {
+  font-family: var(--body-font);
+  background-color: var(--theme-bg-color-2);
+  color: #ccc;
+  width: 100%;
+  padding: 5px;
+  transition: all .1s;
+  cursor: default;
+  border-bottom: 1px solid #ccc;
+}
+
+.selectAutoComplete p {
+  /* color: var(--focus); */
+}
+
+.containerChildren .autoComplete:last-child {
+  border-bottom: none;
+}
+
+/* 
+ALERTA
+*/
+
+.alerta {
+  margin: 10px;
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--body-font);
+  color: white;
+  border-radius: 3px;
+  margin-bottom: -60px;
+  opacity: 0;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  animation: alerta 5s;
+}
+
+@keyframes alerta {
+  0% {
+    margin-bottom: -60px;
+    opacity: 0;
+  }
+  10% {
+    margin-bottom: 10px;
+    opacity: 1;
+  }
+  90% {
+    margin-bottom: 10px;
+    opacity: 1;
+  }
+  100% {
+    margin-bottom: -60px;
+    opacity: 0;
+  }
+}
+
+.alerta div div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.alerta svg:first-child {
+  margin-right: 10px;
+}
+
+.alerta svg:last-child {
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.alerta svg:last-child:hover {
+  opacity: 0.5;
+}
+
+.alertaMsg {
+  opacity: 0.7;
+  padding-left: 25px;
+  font-size: 14px;
+}
+
+.alertaContainer {
+  position: fixed;
+  right: 20px;
+  bottom: 0px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.acordeaoVenda {
+  font-family: var(--body-font);
+  color: var(--text-color);
+  width: 100%;
+  border: none;
+  font-size: 14px;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  overflow-y: scroll;
+  transition: all .3s;
+  margin: 20px;
+  padding: 10px;
+}
+
+.acordeaoVenda table {
+  width: 100%;
+}
+
+.acordeaoVendaBody {
+  transition: all .3s;
+}
+
+.acordeaoVenda::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.acordeaoVenda {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.acordeaoVenda div:nth-child(1){
+  text-align: left;
+}
+.acordeaoVenda div:nth-child(1) p{
+  font-size: 10px;
+  text-align: right;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+.acordeaoVenda div:nth-child(1) table tr:nth-child(1){
+  font-size: 12px;
+}
+.a{
+  width: 100px;
+  height: 5px;
+  background-color: red;
+  position: absolute;
+  margin-top:40px;
+  margin-left:-20px;
+  z-index: -6;/*essa porra nao funciona*/
+}
